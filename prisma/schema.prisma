@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Lodge {
+  id       String   @id @default(cuid())
+  name     String
+  description String
+  location String
+  imageUrl String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Activity {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String
+  category    String
+  duration    String
+  difficulty  String
+  bestTime    String
+  imageUrl    String
+  icon        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+}
+
+model SafariGuide {
+  id       String   @id @default(cuid())
+  name     String
+  content  String
+  imageUrl String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model SeasonalGuide {
+  id        String   @id @default(cuid())
+  season    String
+  content   String
+  imageUrl  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model ContactForm {
+  id       String   @id @default(cuid())
+  name     String
+  email    String
+  message  String
+  createdAt DateTime @default(now())
+}
