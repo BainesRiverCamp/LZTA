@@ -56,4 +56,32 @@ export async function getFeaturedActivities() {
   }
   
   return data
+}
+
+export async function getAllActivities() {
+  const { data, error } = await supabase
+    .from('activities')
+    .select('*')
+    .order('name')
+  
+  if (error) {
+    console.error('Error fetching activities:', error)
+    return []
+  }
+  
+  return data
+}
+
+export async function getAllLodges() {
+  const { data, error } = await supabase
+    .from('lodges')
+    .select('*')
+    .order('name')
+  
+  if (error) {
+    console.error('Error fetching lodges:', error)
+    return []
+  }
+  
+  return data
 } 

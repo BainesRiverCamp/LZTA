@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { SailboatIcon as Boat, Camera, Fish, Tent } from "lucide-react"
 import { getFeaturedActivities } from "@/lib/db-utils"
-import type { Activity } from "@/types/supabase"
+import type { Activity } from "@/types/activity"
 
 // Map activity names to their respective icons
 const activityIcons = {
